@@ -99,15 +99,22 @@ button:hover {
   opacity: 0.7;
   z-index: 0;
 }
+
 .music-toggle {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 24px;
-  background: none;
+  font-size: 16px;
+  background: #c299ff;
   border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
   color: white;
   cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.music-toggle:hover {
+  background: #a87ed9;
 }
 
 
