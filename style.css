@@ -8,6 +8,10 @@ body {
   justify-content: center;
   align-items: center;
 }
+heading.h1{
+align-items: top;
+}
+
 
 .container {
   display: flex;
