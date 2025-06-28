@@ -13,11 +13,16 @@ function backspace() {
 
 function calculate() {
   try {
-    let result = eval(document.getElementById("display").value);
+    let input = document.getElementById("display").value;
+    let result = eval(input);
     document.getElementById("display").value = result;
-  } catch {
+  } catch (error) {
     document.getElementById("display").value = "Error";
   }
+}
+function toggleMusic() {
+  const bgMusic = document.getElementById("bg-music");
+  bgMusic.muted = !bgMusic.muted;
 }
 
 const clickSound = new Audio("https://cdn.pixabay.com/audio/2022/03/23/audio_6b3a705e96.mp3");
