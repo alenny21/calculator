@@ -99,6 +99,17 @@ button:hover {
   opacity: 0.7;
   z-index: 0;
 }
+.music-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
 
 @keyframes floatUp {
   0% { transform: translateY(100vh) scale(1); opacity: 0.7; }
