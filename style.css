@@ -8,8 +8,16 @@ body {
   justify-content: center;
   align-items: center;
 }
-heading.h1{
-align-items: top;
+.page-title {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #a87ed9;
+  z-index: 10;
 }
 
 
