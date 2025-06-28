@@ -7,11 +7,20 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 class="page-title">My Cute Scientific Calculator </h1>
-  <br>
-  <br>
+  <h1 class="page-title">My Cute Scientific Calculator</h1>
+
+  <!-- Music Toggle Button -->
+  <button onclick="toggleMusic()" class="music-toggle">🎵 Pause Music</button>
+
+  <!-- Background Music -->
+  <audio id="bg-music" loop>
+    <source src="jungle-waves-drumampbass-electronic-inspiring-promo-345013.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
   <div class="container">
     <div class="decor left"></div>
+
     <div class="calculator">
       <input type="text" id="display" disabled />
       <div class="buttons">
@@ -51,29 +60,32 @@
         <button onclick="append(')')">)</button>
       </div>
     </div>
+
     <div class="decor right"></div>
   </div>
+
   <script src="script.js"></script>
-  
-<button onclick="toggleMusic()" class="music-toggle">🎵 Pause Music</button>
 
-<audio id="bg-music" loop hidden>
-  <source src="jungle-waves-drumampbass-electronic-inspiring-promo-345013.mp3" type="audio/mpeg">
-</audio>
+  <script>
+    const music = document.getElementById("bg-music");
+    let isPlaying = false;
 
-<script>
-  const music = document.getElementById("bg-music");
-  let isPlaying = true;
-
-  function toggleMusic() {
-    if (isPlaying) {
-      music.pause();
-    } else {
-      music.play();
+    function toggleMusic() {
+      if (!isPlaying) {
+        music.volume = 0.3;
+        music.play();
+        document.querySelector(".music-toggle").innerText = "🔇 Pause Music";
+      } else {
+        music.pause();
+        document.querySelector(".music-toggle").innerText = "🎵 Play Music";
+      }
+      isPlaying = !isPlaying;
     }
-    isPlaying = !isPlaying;
-  }
-</script>
 
+    // Start playing once user interacts
+    window.addEventListener('click', () => {
+      if (!isPlaying) toggleMusic();
+    }, { once: true });
+  </script>
 </body>
 </html>
