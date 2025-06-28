@@ -1,22 +1,33 @@
 body {
   background-color: #e6ccff;
   font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .container {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .decor {
-  font-size: 40px;
+  font-size: 30px;
   color: white;
   padding: 20px;
-  animation: float 3s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
+  white-space: pre;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.decor.left::before,
+.decor.right::before {
+  content: '★\A♡\A✿';
 }
 
 @keyframes float {
@@ -54,13 +65,15 @@ button {
   padding: 15px;
   font-size: 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   background-color: #d1b3ff;
   color: white;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.1s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 button:hover {
   background-color: #c299ff;
+  transform: scale(1.05);
 }
