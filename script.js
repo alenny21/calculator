@@ -24,8 +24,15 @@ const clickSound = new Audio("https://cdn.pixabay.com/audio/2022/03/23/audio_6b3
 
 document.querySelectorAll("button").forEach(button => {
   button.addEventListener("click", () => {
-    clickSound.currentTime = 0; // rewind to start
+    clickSound.currentTime = 0;
     clickSound.play();
   });
 });
 
+// Set background music volume after page fully loads
+window.onload = () => {
+  const bgMusic = document.getElementById("bg-music");
+  if (bgMusic) {
+    bgMusic.volume = 0.3;
+  }
+};
