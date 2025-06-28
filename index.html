@@ -55,26 +55,24 @@
   </div>
   <script src="script.js"></script>
   
-  <audio id="bg-music" autoplay loop hidden>
+<button onclick="toggleMusic()" class="music-toggle">🎵 Pause Music</button>
+
+<audio id="bg-music" loop hidden>
   <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_53e8c0305b.mp3" type="audio/mpeg">
 </audio>
 
- <button onclick="toggleMusic()" class="music-toggle">🎵 Play Music</button>
-<audio id="bg-music" loop hidden>
-  <source src="https://artlist.io/royalty-free-music/song/flower-duet-lakme/112757" type="audio/mpeg">
-</audio>
+<script>
+  const music = document.getElementById("bg-music");
+  let isPlaying = true;
 
-
-  <script>
-  // Floating heart creator
-  setInterval(() => {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (2 + Math.random() * 3) + "s";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 5000);
-  }, 800);
+  function toggleMusic() {
+    if (isPlaying) {
+      music.pause();
+    } else {
+      music.play();
+    }
+    isPlaying = !isPlaying;
+  }
 </script>
 
 </body>
