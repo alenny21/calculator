@@ -34,10 +34,18 @@ document.querySelectorAll("button").forEach(button => {
   });
 });
 
-// Set background music volume after page fully loads
-window.onload = () => {
+let musicPlaying = false;
+
+function toggleMusic() {
   const bgMusic = document.getElementById("bg-music");
-  if (bgMusic) {
+  if (!musicPlaying) {
     bgMusic.volume = 0.3;
+    bgMusic.play();
+    musicPlaying = true;
+    document.querySelector(".music-toggle").textContent = "🔇 Mute Music";
+  } else {
+    bgMusic.pause();
+    musicPlaying = false;
+    document.querySelector(".music-toggle").textContent = "🎵 Play Music";
   }
-};
+}
